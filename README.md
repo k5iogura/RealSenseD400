@@ -137,6 +137,6 @@ Make librealsense.
   $ cmake .. -DBUILD_EXAMPLES=true
   or
   $ cmake ../ -DFORCE_LIBUVC=true -DBUILD_PYTHON_BINDINGS=true
-  $ make -j1 -i
+  $ make -j1 -i   # -i means ignore error
   # make install
 ```
