@@ -27,11 +27,14 @@
 
 Permitt trusted-host,  
 ```
+$ vi .pip/pip.conf
 [global]
 trusted-host = pypi.python.org
                pypi.org
                files.pythonhosted.org
                www.piwheels.org
+
+$ git config --global http.sslVerify false
 ```
 
 ```  
