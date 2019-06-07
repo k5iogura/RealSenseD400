@@ -135,6 +135,8 @@ Make librealsense.
 ```
   $ cd ~/librealsense;mkdir build;cd build
   $ cmake .. -DBUILD_EXAMPLES=true
+  or
+  $ cmake ../ -DFORCE_LIBUVC=true -DBUILD_PYTHON_BINDINGS=true
   $ make -j1
   # make install
 ```
