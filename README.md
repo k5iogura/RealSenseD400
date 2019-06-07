@@ -135,6 +135,6 @@ Make librealsense.
 ```
   $ cd ~/librealsense;mkdir build;cd build
   $ cmake .. -DBUILD_EXAMPLES=true
-  $ make -j2
+  $ make -j1
   # make install
 ```
