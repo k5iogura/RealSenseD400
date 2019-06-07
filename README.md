@@ -60,6 +60,7 @@ CONF_SWAPSIZE=2048
 
 # /etc/init.d/dphys-swapfile restart swapon -s
 ```
+**In below work, make uses -j1 and -i.  -j1 means to avoid memory overflow, -i means ignore make errors.**  
 
 Install depended packages.  
 ```
