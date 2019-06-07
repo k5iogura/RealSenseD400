@@ -21,7 +21,7 @@
     /dev/video0  /dev/video1
 ```
 
-###[RaspberryPi3 + Raspbian Stretch環境への導入](https://qiita.com/PINTO/items/2ad10526f9b2e1c8cdf3)  
+### [RaspberryPi3 + Raspbian Stretch環境への導入](https://qiita.com/PINTO/items/2ad10526f9b2e1c8cdf3)  
 
 - Check prerequisites  
 
