@@ -1,6 +1,10 @@
 # RealSense
 # realsense D435 on RaspberryPi-3 B+
-
+- Spec  
+  RaspberryPi-3 Model B+  
+  Rasbian strech  
+  32GB SDCard  
+  
 - Initial Status as of insertion  
 ```
   # lsusb
