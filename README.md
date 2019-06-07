@@ -42,8 +42,8 @@ $ git config --global http.sslVerify false
 ```
 
 ```  
-$ sudo apt update;sudo apt upgrade
-$ sudo reboot
+# apt update;apt upgrade
+# reboot
 $ uname -a
 Linux raspberrypi 4.19.42-v7+ #1219 SMP Tue May 14 21:20:58 BST 2019 armv7l GNU/Linux
 
@@ -91,15 +91,15 @@ Install protobuf
   $ ./autogen.sh
   $ ./configure
   $ make
-  $ # make install
+  # make install
   $ cd python
   $ export LD_LIBRARY_PATH=../src/.libs
   $ python3 setup.py build --cpp_implementation 
   $ python3 setup.py test --cpp_implementation
-  $ sudo python3 setup.py install --cpp_implementation
+  # python3 setup.py install --cpp_implementation
   $ export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=cpp
   $ export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION_VERSION=3
-  $ sudo ldconfig
+  # ldconfig
   $ protoc --version
     libprotoc 3.5.1
 ```
