@@ -42,16 +42,13 @@ $ git config --global http.sslVerify false
 ```
 
 ```  
-$ uname -a
-Linux raspberrypi 4.14.34-v7+ #1110 SMP Mon Apr 16 15:18:51 BST 2018 armv7l GNU/Linux
-
 $ sudo apt update;sudo apt upgrade
 $ sudo reboot
 $ uname -a
-Linux raspberrypi 4.14.50-v7+ #1122 SMP Tue Jun 19 12:26:26 BST 2018 armv7l GNU/Linux
+Linux raspberrypi 4.19.42-v7+ #1219 SMP Tue May 14 21:20:58 BST 2019 armv7l GNU/Linux
 
 $ gcc -v
-gcc version 6.3.0 20170516 (Raspbian 6.3.0-18+rpi1+deb9u1)
+gcc (Raspbian 6.3.0-18+rpi1+deb9u1) 6.3.0 20170516
 
 $ cmake --version
 cmake version 3.7.2
