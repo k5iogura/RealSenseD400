@@ -141,3 +141,32 @@ Make librealsense.
   $ make -j1 -i   # -i means ignore error
   # make install
 ```
+Make OpenCV with TBB and OpenGL.  
+```
+  $ wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.4.1.zip
+  $ unzip opencv.zip;rm opencv.zip
+  $ wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.4.1.zip
+  $ unzip opencv_contrib.zip;rm opencv_contrib.zip
+  $ cd ~/opencv-3.4.1/;mkdir build;cd build
+  $ cmake -D CMAKE_CXX_FLAGS="-DTBB_USE_GCC_BUILTINS=1 -D__TBB_64BIT_ATOMICS=0" \
+          -D CMAKE_BUILD_TYPE=RELEASE \
+          -D CMAKE_INSTALL_PREFIX=/usr/local \
+          -D INSTALL_PYTHON_EXAMPLES=OFF \
+          -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.4.1/modules \
+          -D BUILD_EXAMPLES=OFF \
+          -D PYTHON_DEFAULT_EXECUTABLE=$(which python3) \
+          -D INSTALL_PYTHON_EXAMPLES=OFF \
+          -D BUILD_opencv_python2=ON \
+          -D BUILD_opencv_python3=ON \
+          -D WITH_OPENCL=OFF \
+          -D WITH_OPENGL=ON \
+          -D WITH_TBB=ON \
+          -D BUILD_TBB=OFF \
+          -D WITH_CUDA=OFF \
+          -D ENABLE_NEON:BOOL=ON \
+          -D WITH_QT=OFF \
+          -D BUILD_TESTS=OFF ..
+  $ make -j1
+  $ sudo make install
+  $ sudo ldconfig
+```
