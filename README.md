@@ -144,6 +144,7 @@ Make librealsense.
 ```
 Make OpenCV with TBB and OpenGL.  
 ```
+  # apt install libavresample-dev libv4l-dev
   $ wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.4.1.zip
   $ unzip opencv.zip;rm opencv.zip
   $ wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.4.1.zip
