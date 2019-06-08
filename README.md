@@ -175,6 +175,7 @@ Make OpenCV with TBB and OpenGL.
           -D WITH_CUDA=OFF \
           -D ENABLE_NEON:BOOL=ON \
           -D WITH_QT=OFF \
+          -D WITH_OPENGL=ON \
           -D BUILD_TESTS=OFF ..
   $ make -j1
   $ sudo make install
