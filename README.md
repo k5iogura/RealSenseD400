@@ -209,4 +209,19 @@ $ cmake .. -DBUILD_PYTHON_BINDINGS=bool:true -DPYTHON_EXECUTABLE=$(which python3
 $ cmake .. -DBUILD_PYTHON_BINDINGS=bool:true -DPYTHON_EXECUTABLE=$(which python)
 $ make -j1
 $ sudo make install
+$ vi ~/.bashrc
+  export PYTHONPATH=$PYTHONPATH:/usr/local/lib
+$ .  ~/.bashrc
 ```
+
+### Check status of installation for pyrealsense2
+
+```
+$ python3
+  Python 3.5.3 (default, Sep 27 2018, 17:25:39) 
+  [GCC 6.3.0 20170516] on linux
+  Type "help", "copyright", "credits" or "license" for more information.
+>>> import pyrealsense2
+>>> 
+```
+Import ok:-)  
