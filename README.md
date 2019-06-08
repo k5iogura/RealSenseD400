@@ -200,6 +200,7 @@ $ sudo make install
 
 Build **python wrapper**.  
 ```
+$ sudo apt-get install libgtk2.0-dev libgtk-3-dev
 $ cd ~/librealsense/build
 
 #Python3.x系で使用するとき
