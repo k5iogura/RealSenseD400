@@ -131,15 +131,14 @@ Needs i**mage format** supporting lib.
   # apt install libv4l-dev libxvidcore-dev libx264-dev libgtk2.0-dev
 ```
 
-**librealsense** from git.  
+git from **librealsense** and setup **udev rule**.  
 ```
   $ git clone https://github.com/IntelRealSense/librealsense
   # cp librealsense/config/99-realsense-libusb.rules /etc/udev/rules.d
   # udevadm control --reload-rules && udevadm trigger
-
 ```
 
-Make **librealsense**.  
+Build **librealsense**.  
 ```
   # apt install libglext1 libglext1-dev
   $ cd ~/librealsense;mkdir build;cd build
