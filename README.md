@@ -198,3 +198,15 @@ $ sudo make install
 [100%] Built target rs-dnn
 ```
 
+Build **python wrapper**.  
+```
+$ cd ~/librealsense/build
+
+#Python3.x系で使用するとき
+$ cmake .. -DBUILD_PYTHON_BINDINGS=bool:true -DPYTHON_EXECUTABLE=$(which python3)
+又は
+#Python2.x系で使用するとき
+$ cmake .. -DBUILD_PYTHON_BINDINGS=bool:true -DPYTHON_EXECUTABLE=$(which python)
+$ make -j1
+$ sudo make install
+```
