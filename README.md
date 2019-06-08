@@ -125,6 +125,12 @@ Needs TBB.
   $ rm libtbb-dev_2018U2_armhf.deb
 ```
 
+Needs graphics lib.  
+```
+  # apt install libjpeg-dev libtiff5-dev libpng12-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev
+  # apt install libv4l-dev libxvidcore-dev libx264-dev libgtk2.0-dev
+```
+
 librealsense from git.  
 ```
   $ git clone https://github.com/IntelRealSense/librealsense
