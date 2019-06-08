@@ -225,3 +225,15 @@ $ python3
 >>> 
 ```
 Import ok:-)  
+
+Retrieve **swap size**.  
+```
+$ sudo vi /etc/dphys-swapfile 
+$ sudo /etc/init.d/dphys-swapfile restart swapon -s
+  [ ok ] Restarting dphys-swapfile (via systemctl): dphys-swapfile.service.
+
+$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:           874M        122M        294M         17M        457M        682M
+Swap:           99M          0B         99M
+```
