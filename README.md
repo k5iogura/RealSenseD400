@@ -106,8 +106,8 @@ Install protobuf
 
 Needs gtk+, opengl for python  
 ```
-  # apt-get install build-essential libgtk-3-dev
-  # apt-get install freeglut3-dev
+  # apt-get install build-essential libgtk-3-dev libgtk-2.0-dev
+  # apt-get install freeglut3-dev libgl2.0-dev libglext1-dev
   # apt-get install python-opengl
   # pip3 install pyopengl
   # pip3 install pyopengl_accelerate
@@ -125,7 +125,7 @@ Needs TBB.
   $ rm libtbb-dev_2018U2_armhf.deb
 ```
 
-Needs graphics lib.  
+Needs image format supporting lib.  
 ```
   # apt install libjpeg-dev libtiff5-dev libpng12-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev
   # apt install libv4l-dev libxvidcore-dev libx264-dev libgtk2.0-dev
@@ -141,6 +141,7 @@ librealsense from git.
 
 Make librealsense.  
 ```
+  # apt install libglext1 libglext1-dev
   $ cd ~/librealsense;mkdir build;cd build
   $ cmake .. -DBUILD_EXAMPLES=true
   or
