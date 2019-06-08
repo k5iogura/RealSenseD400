@@ -27,9 +27,9 @@
 
 ### [RaspberryPi3 + Raspbian Stretch環境への導入](https://qiita.com/PINTO/items/2ad10526f9b2e1c8cdf3)  
 
-- Check prerequisites  
+- Check **prerequisites**  
 
-Permitt trusted-host,  
+Permitt **trusted-host**,  
 ```
 $ vi .pip/pip.conf
 [global]
@@ -54,7 +54,7 @@ $ cmake --version
 cmake version 3.7.2
 ```
 
-Dilate swap area.  
+**Dilate swap area**.  
 ```
 # vi /etc/dphys-swapfile
 CONF_SWAPSIZE=2048
@@ -69,7 +69,7 @@ Install depended packages.
   # pip3 install pillow lxml matplotlib cython
 ```
 
-Upgrade cmake.  
+Upgrade **cmake**.  
 ```
   $ wget https://cmake.org/files/v3.11/cmake-3.11.4.tar.gz
   $ tar -zxvf cmake-3.11.4.tar.gz;rm cmake-3.11.4.tar.gz
@@ -84,7 +84,7 @@ Upgrade cmake.
   $ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 ```
 
-Install protobuf  
+Install **protobuf**  
 ```
   $ git clone --depth=1 -b v3.5.1 https://github.com/google/protobuf.git
   $ cd protobuf
@@ -104,7 +104,7 @@ Install protobuf
     libprotoc 3.5.1
 ```
 
-Needs gtk+, opengl for python  
+Needs **gtk+, opengl** for python  
 ```
   # apt-get install build-essential libgtk-3-dev libgtk-2.0-dev
   # apt-get install freeglut3-dev libgl2.0-dev libglext1-dev
@@ -116,7 +116,7 @@ Needs gtk+, opengl for python
   # reboot
 ```
 
-Needs TBB.  
+Needs **TBB**.  
 ```
   $ cd ~
   $ wget https://github.com/PINTO0309/TBBonARMv7/raw/master/libtbb-dev_2018U2_armhf.deb
@@ -125,13 +125,13 @@ Needs TBB.
   $ rm libtbb-dev_2018U2_armhf.deb
 ```
 
-Needs image format supporting lib.  
+Needs i**mage format** supporting lib.  
 ```
   # apt install libjpeg-dev libtiff5-dev libpng12-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev
   # apt install libv4l-dev libxvidcore-dev libx264-dev libgtk2.0-dev
 ```
 
-librealsense from git.  
+**librealsense** from git.  
 ```
   $ git clone https://github.com/IntelRealSense/librealsense
   # cp librealsense/config/99-realsense-libusb.rules /etc/udev/rules.d
@@ -139,7 +139,7 @@ librealsense from git.
 
 ```
 
-Make librealsense.  
+Make **librealsense**.  
 ```
   # apt install libglext1 libglext1-dev
   $ cd ~/librealsense;mkdir build;cd build
@@ -149,7 +149,7 @@ Make librealsense.
   $ make -j1 -i   # -i means ignore error
   # make install
 ```
-Make OpenCV with TBB and OpenGL.  
+Make **OpenCV** with TBB and OpenGL.  
 ```
   # apt install libavresample-dev libv4l-dev
   # apt install mesa-utils* libglu1* libgles2-mesa-dev
