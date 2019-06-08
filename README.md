@@ -181,3 +181,20 @@ Make **OpenCV** with TBB and OpenGL.
   $ sudo make install
   $ sudo ldconfig
 ```
+
+Build **realsense sample** with opencv  
+```
+$ cd ~/librealsense/wrappers/opencv;mkdir build;cd build
+$ cmake ..
+$ vi ../latency-tool/CMakeLists.txt
+target_link_libraries(rs-latency-tool ${DEPENDENCIES})
+↓下記のように変更して保存
+target_link_libraries(rs-latency-tool ${DEPENDENCIES} pthread)
+$ make -j $(($(nproc) + 1))
+$ sudo make install
+[ 25%] Built target rs-imshow
+[ 50%] Built target rs-grabcuts
+[ 75%] Built target rs-latency-tool
+[100%] Built target rs-dnn
+```
+
