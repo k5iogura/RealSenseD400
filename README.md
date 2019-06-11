@@ -97,8 +97,9 @@ $ uname -r
   $ python3 -c "import cv2"
 ```
 
-### Build librealsense,  
+### Build librealsense(v2.22.0),  
 ```
+ $ git clone https://github.com/IntelRealSense/librealsense
  $ cd librealsense
  $ mk build ; cd build
  
