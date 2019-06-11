@@ -32,10 +32,9 @@ while True:
 
     if not args.color:
         depth_frame = frames.get_depth_frame()
-        depth_image = np.asanyarray(depth_frame.get_data())
-        depth_image = depth_image[:,:,np.newaxis]
-        depth_image = depth_image.astype(np.uint8).clip(0,255)
-        im = cv2.applyColorMap(depth_image, cv2.COLORMAP_HSV)
+        depth_frame = rs.colorizer().colorize(depth_frame)
+        im = np.asanyarray(depth_frame.get_data())
+        #im = cv2.applyColorMap(depth_image, cv2.COLORMAP_HSV)
         im = cv2.resize(im, (args.vw,args.vh))
     else:
         color_image = np.asanyarray(color_frame.get_data())
