@@ -1,157 +1,70 @@
-# RealSense
-# realsense D435 on RaspberryPi-3 B+
-- Spec  
-  RaspberryPi-3 Model B+  
-  Rasbian strech  
-  32GB SDCard  
-  
-- Initial Status as of insertion  
+# D435 on Rabpian Strech with RaspberryPi-3 Model B+
+
+[IntelR RealSense? D400 cameras with Raspberry Pi](https://github.com/IntelRealSense/librealsense/blob/master/doc/RaspberryPi3.md)  
+[デプスカメラRealSenseD435で "紫色のイカ" や "オレンジ色の玉ねぎ" を切り取ったり "金髪の人" を追っかけて距離を測る（２） with RaspberryPi3 (Raspbian Stretch)](https://qiita.com/PINTO/items/2ad10526f9b2e1c8cdf3)  
+
+### Break security holds,  
 ```
-  # lsusb
-    Bus 001 Device 003: ID 8086:0ad6 Intel Corp. 
-    Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-  # dmesg | tail
-    [   27.144227] random: crng init done
-    [   87.431432] usb 1-1: reset high-speed USB device number 2 using dwc2
-    [   87.671574] usb 1-1: device firmware changed
-    [   87.671618] usb 1-1: USB disconnect, device number 2
-    [   87.961433] usb 1-1: new high-speed USB device number 3 using dwc2
-    [   88.213666] uvcvideo: Unknown video format 00000050-0000-0010-8000-00aa00389b71
-    [   88.213680] uvcvideo: Unknown video format 00000032-0000-0010-8000-00aa00389b71
-    [   88.214374] uvcvideo: Found UVC 1.50 device Intel(R) RealSense(TM) 430 (8086:0ad6)
-    [   88.215664] uvcvideo: Unable to create debugfs 1-3 directory.
-    [   88.215996] input: Intel(R) RealSense(TM) 430 as /devices/platform/sopc@0/ffb00000.usb/usb1/1-1/1-1:1.0/input/input1
-  # ls /dev/video*
-    /dev/video0  /dev/video1
+  $ git config --global http.sslVerify false
+  $ vi  ~/.pip/pip.conf
+    [global]
+    trusted-host = pypi.python.org
+                   pypi.org
+                   files.pythonhosted.org
 ```
 
-### [RaspberryPi3 + Raspbian Stretch環境への導入](https://qiita.com/PINTO/items/2ad10526f9b2e1c8cdf3)  
+### Bringup linux environment
 
-- Check **prerequisites**  
+Write SDCard and boot  
+- Use 2018-10-09-raspbian-stretch.img  
 
-Permitt **trusted-host**,  
+- touch /boot/ssh  
+booting 
+
+- Hold kernel and upgrade  
+Mark any linux-image as hold and upgrade  
+
 ```
-$ vi .pip/pip.conf
-[global]
-trusted-host = pypi.python.org
-               pypi.org
-               files.pythonhosted.org
-               www.piwheels.org
+$ uname -r
+4.14.71+
 
-$ git config --global http.sslVerify false
-```
+# apt-cache showpkg linux-image
 
-```  
-# apt update;apt upgrade
+# apt-mark hold raspberrypi-kernel
+# apt-mark hold linux-image-3.6-trunk-rpi
+# apt-mark hold linux-image-3.10-3-rpi
+
+# apt update
+# apt upgrade
 # reboot
-$ uname -a
-Linux raspberrypi 4.19.42-v7+ #1219 SMP Tue May 14 21:20:58 BST 2019 armv7l GNU/Linux
 
-$ gcc -v
-gcc (Raspbian 6.3.0-18+rpi1+deb9u1) 6.3.0 20170516
-
-$ cmake --version
-cmake version 3.7.2
+$ uname -r
+4.14.71-v7+
 ```
 
-**Dilate swap area**.  
 ```
-# vi /etc/dphys-swapfile
-CONF_SWAPSIZE=2048
+ # apt install -y libxml2-dev libxslt1-dev
+ # pip3 install pillow lxml  matplotlib cython
 
-# /etc/init.d/dphys-swapfile restart swapon -s
-```
-**In below work, make uses -j1 and -i.  -j1 means to avoid memory overflow, -i means ignore make errors.**  
+ # apt install -y libgtkglext1 libgtkglext1-dev
+ # apt-get install build-essential freeglut3-dev python-opengl
 
-Install depended packages.  
-```
-  # apt-get install libxml2-dev libxslt-dev python-dev
-  # pip3 install pillow lxml matplotlib cython
-```
+ # apt install -y git libssl-dev libusb-1.0-0-dev pkg-config libgtk-3-dev
+ # apt install -y libglfw3-dev at-spi2-core libdrm* python-tk libjpeg-dev libtiff5-dev
+ # apt install -y libjasper-dev libpng12-dev libavcodec-dev libavformat-dev
+ # apt install -y libswscale-dev libv4l-dev libxvidcore-dev libx264-dev qt4-dev-tools
+ # apt install -y autoconf automake libtool curl libatlas-base-dev mesa-utils* 
+ # apt install -y libglu1* libgles2-mesa-dev libopenal-dev cmake-curses-gui
+ # apt update 
+ # apt upgrade
 
-Upgrade **cmake**.  
-```
-  $ wget https://cmake.org/files/v3.11/cmake-3.11.4.tar.gz
-  $ tar -zxvf cmake-3.11.4.tar.gz;rm cmake-3.11.4.tar.gz
-  $ cd cmake-3.11.4
-  $ ./configure --prefix=/home/pi/cmake-3.11.4
-  $ make -j1
-  $ sudo make install
-  $ export PATH=/home/pi/cmake-3.11.4/bin:$PATH
-  $ source ~/.bashrc
-  $ cmake --version
-    cmake version 3.11.4
-  $ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 ```
 
-Install **protobuf**  
-```
-  $ git clone --depth=1 -b v3.5.1 https://github.com/google/protobuf.git
-  $ cd protobuf
-  $ ./autogen.sh
-  $ ./configure
-  $ make
-  # make install
-  $ cd python
-  $ export LD_LIBRARY_PATH=../src/.libs
-  $ python3 setup.py build --cpp_implementation 
-  $ python3 setup.py test --cpp_implementation
-  # python3 setup.py install --cpp_implementation
-  $ export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=cpp
-  $ export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION_VERSION=3
-  # ldconfig
-  $ protoc --version
-    libprotoc 3.5.1
-```
-
-Needs **gtk+, opengl** for python  
-```
-  # apt-get install build-essential libgtk-3-dev libgtk-2.0-dev
-  # apt-get install freeglut3-dev libgl2.0-dev libglext1-dev
-  # apt-get install python-opengl
-  # pip3 install pyopengl
-  # pip3 install pyopengl_accelerate
-  # raspi-config
-    "7.Advanced Options" - "A7 GL Driver" - "G2 GL (Fake KMS)"
-  # reboot
-```
-
-Needs **TBB**.  
-```
-  $ cd ~
-  $ wget https://github.com/PINTO0309/TBBonARMv7/raw/master/libtbb-dev_2018U2_armhf.deb
-  # dpkg -i ~/libtbb-dev_2018U2_armhf.deb
-  # ldconfig
-  $ rm libtbb-dev_2018U2_armhf.deb
-```
-
-Needs i**mage format** supporting lib.  
-```
-  # apt install libjpeg-dev libtiff5-dev libpng12-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev
-  # apt install libv4l-dev libxvidcore-dev libx264-dev libgtk2.0-dev
-```
-
-git from **librealsense** and setup **udev rule**.  
-```
-  $ git clone https://github.com/IntelRealSense/librealsense
-  # cp librealsense/config/99-realsense-libusb.rules /etc/udev/rules.d
-  # udevadm control --reload-rules && udevadm trigger
-```
-
-Build **librealsense**.  
-```
-  # apt install libglext1 libglext1-dev
-  $ cd ~/librealsense;mkdir build;cd build
-  $ cmake .. -DBUILD_EXAMPLES=true
-  or
-  $ cmake ../ -DFORCE_LIBUVC=true -DBUILD_PYTHON_BINDINGS=true
-  $ make -j1 -i   # -i means ignore error
-  # make install
-```
-Make **OpenCV** with TBB and OpenGL.  
+### Build OpenCV with TBB and OpenGL,  
 ```
   # apt install libavresample-dev libv4l-dev
   # apt install mesa-utils* libglu1* libgles2-mesa-dev
+
   $ wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.4.1.zip
   $ unzip opencv.zip;rm opencv.zip
   $ wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.4.1.zip
@@ -179,61 +92,40 @@ Make **OpenCV** with TBB and OpenGL.
   $ make -j1
   $ sudo make install
   $ sudo ldconfig
+
+  $ python  -c "import cv2"
+  $ python3 -c "import cv2"
 ```
 
-Build **realsense sample** with opencv  
+### Build librealsense,  
 ```
-$ cd ~/librealsense/wrappers/opencv;mkdir build;cd build
-$ cmake ..
-$ vi ../latency-tool/CMakeLists.txt
-target_link_libraries(rs-latency-tool ${DEPENDENCIES})
-↓下記のように変更して保存
-target_link_libraries(rs-latency-tool ${DEPENDENCIES} pthread)
-$ make -j $(($(nproc) + 1))
-$ sudo make install
-[ 25%] Built target rs-imshow
-[ 50%] Built target rs-grabcuts
-[ 75%] Built target rs-latency-tool
-[100%] Built target rs-dnn
+ $ cd librealsense
+ $ mk build ; cd build
+ 
+ $ cmake .. 
+ $ cmake .. -DBUILD_EXAMPLES=true -DBUILD_PYTHON_BINDINGS=bool:true -DPYTHON_EXECUTABLE=$(which python3)
+ $ make -j1 -i
+ # make install
+ $ export PYTHONPATH=$PYTHONPATH:/usr/local/lib
+
+ $ python  -c "import pyreadsense2"
 ```
 
-Build **python wrapper**.  
-```
-$ sudo apt-get install libgtk2.0-dev libgtk-3-dev
-$ cd ~/librealsense/build
+### Update firmware on Windows10
+Download Intel RealSense D400 Series DFU Tool for Windows.zip and D400_Series_Production_FW_5_11_1_100.zip  
+![](./FirmwareUpdater.png)  
 
-#Python3.x系で使用するとき
-$ cmake .. -DBUILD_PYTHON_BINDINGS=bool:true -DPYTHON_EXECUTABLE=$(which python3)
-又は
-#Python2.x系で使用するとき
-$ cmake .. -DBUILD_PYTHON_BINDINGS=bool:true -DPYTHON_EXECUTABLE=$(which python)
-$ make -j1
-$ sudo make install
-$ vi ~/.bashrc
-  export PYTHONPATH=$PYTHONPATH:/usr/local/lib
-$ .  ~/.bashrc
+### Check realsense-viewer on RaspberryPi-3 Model B+
 ```
+ $ ls /dev/video*
+   /dev/video0  /dev/video1  /dev/video2
 
-### Check status of installation for pyrealsense2
+ $ realsense-viewer
+ 11/06 13:17:09,237 WARNING [1725944304] (types.cpp:48) Out of frame resources!
+ 11/06 13:17:09,237 ERROR [1725944304] (synthetic-stream.cpp:44) Exception was thrown during user processing callback!
+ 11/06 13:17:09,238 ERROR [1725944304] (synthetic-stream.cpp:44) Exception was thrown during user processing callback!
+```
+![](./realsense-viewer.jpg)  
 
-```
-$ python3
-  Python 3.5.3 (default, Sep 27 2018, 17:25:39) 
-  [GCC 6.3.0 20170516] on linux
-  Type "help", "copyright", "credits" or "license" for more information.
->>> import pyrealsense2
->>> 
-```
-Import ok:-)  
+Ok  
 
-Retrieve **swap size**.  
-```
-$ sudo vi /etc/dphys-swapfile 
-$ sudo /etc/init.d/dphys-swapfile restart swapon -s
-  [ ok ] Restarting dphys-swapfile (via systemctl): dphys-swapfile.service.
-
-$ free -h
-              total        used        free      shared  buff/cache   available
-Mem:           874M        122M        294M         17M        457M        682M
-Swap:           99M          0B         99M
-```
