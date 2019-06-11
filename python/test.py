@@ -37,7 +37,7 @@ while True:
         depth_image = cv2.cvtColor(depth_image, cv2.COLOR_GRAY2RGB)
         depth_image = depth_image/(np.max(depth_image)+0.1)
         depth_image = (depth_image*255).astype(np.uint8)
-        im = cv2.resize(depth_image, (300,300))
+        im = cv2.resize(depth_image, (args.vw,args.vh))
     if args.color:
         color_image = np.asanyarray(color_frame.get_data())
         im = cv2.resize(color_image, (args.vw, args.vh))
