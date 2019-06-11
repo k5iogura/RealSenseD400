@@ -19,19 +19,25 @@ args = args.parse_args()
 pipeline = rs.pipeline()
 config = rs.config()
 
-if not args.color : config.enable_stream(rs.stream.depth, args.cw, args.ch, rs.format.z16, 30)
-if     args.color : config.enable_stream(rs.stream.color, args.cw, args.ch, rs.format.bgr8, 30)
+align_to = rs.stream.color
+align    = rs.align(align_to)
+
+if not args.color: config.enable_stream(rs.stream.depth, args.cw, args.ch, rs.format.z16, 30)
+if     args.color: config.enable_stream(rs.stream.color, args.cw, args.ch, rs.format.bgr8, 30)
 
 # Start streaming
 pipeline.start(config)
 start = time()
 images= 0
 while True:
-    frames = pipeline.wait_for_frames()
-    color_frame = frames.get_color_frame()
+    frame = pipeline.wait_for_frames()
+    align_frame = align.process(frame)
+    if args.color:
+        color_frame = align_frame.get_color_frame()
+    else:
+        depth_frame = align_frame.get_depth_frame()
 
     if not args.color:
-        depth_frame = frames.get_depth_frame()
         depth_frame = rs.colorizer().colorize(depth_frame)
         im = np.asanyarray(depth_frame.get_data())
         #im = cv2.applyColorMap(depth_image, cv2.COLORMAP_HSV)
