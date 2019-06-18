@@ -60,6 +60,20 @@ $ uname -r
 
 ```
 
+### Update cmake 3.11.4
+```
+$ cd ~
+$ wget https://cmake.org/files/v3.11/cmake-3.11.4.tar.gz
+$ tar -zxvf cmake-3.11.4.tar.gz;rm cmake-3.11.4.tar.gz
+$ cd cmake-3.11.4
+$ ./configure --prefix=/home/<username>/cmake-3.11.4
+$ make
+$ make install
+$ export PATH=/home/<username>/cmake-3.11.4/bin:$PATH
+$ source ~/.bashrc
+$ cmake --version
+```
+
 ### Build OpenCV with TBB and OpenGL,  
 ```
   # apt install libavresample-dev libv4l-dev
