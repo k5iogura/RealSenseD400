@@ -60,6 +60,8 @@ $ uname -r
 
 ```
 
+**Notice: Needs up to GCC 6***  
+
 ### Update cmake 3.11.4
 ```
 $ cd ~
