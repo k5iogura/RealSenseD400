@@ -167,6 +167,6 @@ Ok
  # apt update && apt upgrade -y  
 ```
 
-**Continue from above *Break security holds section* **  
+**Continue from above "Break security holds" section**  
 
 Jun.06, 2019  
