@@ -145,3 +145,28 @@ Download Intel RealSense D400 Series DFU Tool for Windows.zip and D400_Series_Pr
 
 Ok  
 
+# D435 on Rabpian Strech with Rock64 and Armbian  
+
+- Download and write Armbian to SDCard  
+[Armbian_5.75_Rock64_Debian_stretch_default_4.4.174_desktop](https://dl.armbian.com/rock64/archive/Armbian_5.75_Rock64_Debian_stretch_default_4.4.174_desktop.7z)
+
+- Boot as root and check  
+```
+ # uname -r
+   4.4.174-rockchip64
+ # gcc --version
+   gcc (Debian 6.3.0-18+deb9u1) 6.3.0 20170516
+ # cmake --version
+   cmake version 3.7.2
+```
+
+**Notice: Default id/pass are root/1234**  
+
+- Upgrade distribution  
+```
+ # apt update && apt upgrade -y  
+```
+
+**Continue above procedure from Build librealsense**  
+
+Jun.06, 2019  
