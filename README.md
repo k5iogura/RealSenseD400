@@ -145,7 +145,7 @@ Download Intel RealSense D400 Series DFU Tool for Windows.zip and D400_Series_Pr
 
 Ok  
 
-# D435 on Rabpian Strech with Rock64 and Armbian  
+# D435 on Armbian Strech with Rock64(USB3.0)  
 
 - Download and write Armbian to SDCard  
 [Armbian_5.75_Rock64_Debian_stretch_default_4.4.174_desktop](https://dl.armbian.com/rock64/archive/Armbian_5.75_Rock64_Debian_stretch_default_4.4.174_desktop.7z)
