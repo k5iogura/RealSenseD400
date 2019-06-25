@@ -167,6 +167,6 @@ Ok
  # apt update && apt upgrade -y  
 ```
 
-**Continue above procedure from Build librealsense**  
+**Continue from above *Break security holds section* **  
 
 Jun.06, 2019  
