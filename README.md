@@ -119,8 +119,12 @@ $ cmake --version
  $ cd librealsense
  $ mk build ; cd build
  
+ $ cmake .. -DBUILD_EXAMPLES=true -DCMAKE_BUILD_TYPE=Release
+ $ make -j1
+ # make install
+ 
  $ cmake .. -DBUILD_EXAMPLES=true -DBUILD_PYTHON_BINDINGS=bool:true -DPYTHON_EXECUTABLE=$(which python3)
- $ make -j1 -i
+ $ make -j1
  # make install
  $ export PYTHONPATH=$PYTHONPATH:/usr/local/lib
 
