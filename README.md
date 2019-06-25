@@ -117,7 +117,6 @@ $ cmake --version
  $ cd librealsense
  $ mk build ; cd build
  
- $ cmake .. 
  $ cmake .. -DBUILD_EXAMPLES=true -DBUILD_PYTHON_BINDINGS=bool:true -DPYTHON_EXECUTABLE=$(which python3)
  $ make -j1 -i
  # make install
