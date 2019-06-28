@@ -173,4 +173,23 @@ Ok
 
 **Continue from above "Break security holds" section**  
 
-Jun.06, 2019  
+# D435 on Ubuntu 16.04 server with Altera Arria10soc  
+
+- Upgrade GCC version 5 to version 6 via [PPA](https://launchpad.net/~ubuntu-toolchain-r/+archive/ubuntu/test).  
+
+```
+ # uname -r
+   4.9.78-ltsi-06726-g5704788
+ # apt-get update
+ # apt-get install build-essential software-properties-common -y
+ # add-apt-repository ppa:ubuntu-toolchain-r/test -y
+ # apt-get update
+ # apt-get install gcc-6 g++-6 -y
+ # update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
+ # gcc --version
+   gcc (Ubuntu/Linaro 6.5.0-2ubuntu1~16.04) 6.5.0 20181026
+```
+
+**Continue from above "Break security holds" section**  
+
+**Jun.28, 2019**  
