@@ -113,7 +113,7 @@ $ cmake --version
   $ python3 -c "import cv2"
 ```
 
-### Build librealsense(v2.22.0),  
+### Build librealsense(v2.22.0, v2.23.0),  
 ```
  $ git clone https://github.com/IntelRealSense/librealsense
  $ cd librealsense
