@@ -116,7 +116,7 @@ $ cmake --version
 ### Build librealsense(v2.22.0, v2.23.0)  
 
 On system has less than 1GB memory such as Arrira10soc, gcc causes internal compiler error.   
-Attach or expand **swap area** to avoid gcc internal compiler error.  
+Attach or expand **swap area** to avoid gcc internal compiler error but takes a long long time.  
 Needs **over 2GB** memory to compile python.cpp code.  
 ```
  # dd if=/dev/zero of=swapfile bs=1M count 3000
