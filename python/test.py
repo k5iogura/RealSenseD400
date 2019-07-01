@@ -4,7 +4,7 @@ import numpy as np
 import cv2
 import sys, os
 import argparse
-from time import time
+from time import time, sleep
 from os.path import isfile, join
 import re
 from pdb import *
@@ -32,6 +32,7 @@ if args.color: config.enable_stream(rs.stream.color, args.cw, args.ch, rs.format
 
 # Start streaming
 pipeline.start(config)
+sleep(5)
 start = time()
 images= 0
 while True:
