@@ -213,4 +213,10 @@ Ok
 
 **Continue from above "Break security holds" section**  
 
+# Benchmark test of FPS
+
+|Read Cam|Execution|Drawing|
+|       -|        -|      -|
+|6.5     |        -|      -|
+
 **Jun.28, 2019**  
