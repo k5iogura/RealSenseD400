@@ -175,7 +175,7 @@ Ok
 
 # D435 on Ubuntu 16.04 server with Altera Arria10soc  
 
-- Upgrade GCC version 5 to version 6 via [PPA](https://launchpad.net/~ubuntu-toolchain-r/+archive/ubuntu/test).  
+- Upgrade GCC version 5 to version 6 via [PPA](https://launchpad.net/~ubuntu-toolchain-r/+archive/ubuntu/test) (but maybe unnecessary).  
 
 ```
  # uname -r
