@@ -222,7 +222,8 @@ Via ssh -T of X11.
 |      :-:  |    -|       -|        -|      -|                                  -|
 |test.py    |    6|       -|        -|      -| RGB, 1 process 1 thread           |
 |test.py    |    2|       -|        -|      -| RGB-D, 1 process 1 thread         |
-|435_demo.py|   37|       -|       57|    110| RGB, dma, 2 process 2 thread      |
+|435_demo.py|   37|       -|       42|    110| RGB, dma, 2 process 2 thread      |
+|435_demo.py|    4|       -|       42|    360| RGB-D, dma, 2 process 2 thread    |
 
 - Versus UVC Camera estimation  
 
