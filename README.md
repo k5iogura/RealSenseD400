@@ -125,7 +125,7 @@ Needs **over 2GB** memory to compile python.cpp code.
  # free -h
 ```
 
-Below make command includes *-j1* option to use 1process. It is slow but safesync  
+Below make command includes **-j1** option to use 1process. It is slow but safety way to make librealsense on small machine such as RaspberryPi, Arria10SoC.  
 
 ```
  $ git clone https://github.com/IntelRealSense/librealsense
