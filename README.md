@@ -215,8 +215,8 @@ Ok
 
 # Benchmark test of FPS
 
-|Read Cam|Execution|Drawing|
-|       -|        -|      -|
-|6.5     |        -|      -|
+|BenchMark|Read Cam|Execution|Drawing|
+|      :-:|       -|        -|      -|
+|test.py  |6.5     |        -|      -|
 
 **Jun.28, 2019**  
