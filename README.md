@@ -213,10 +213,10 @@ Ok
 
 **Continue from above "Break security holds" section**  
 
-# Benchmark test of FPS
+# Benchmark test of FPS or msec of a phase
 
-|BenchMark|Read Cam|Execution|Drawing|
-|      :-:|       -|        -|      -|
-|test.py  |6.5     |        -|      -|
+|BenchMark| FPS |Read Cam|Execution|Drawing|
+|      :-:|    -|       -|        -|      -|
+|test.py  |  6.5|       -|        -|      -|
 
 **Jun.28, 2019**  
