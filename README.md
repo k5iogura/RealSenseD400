@@ -213,10 +213,20 @@ Ok
 
 **Continue from above "Break security holds" section**  
 
-# Benchmark test of FPS or msec of a phase
+### Benchmark test of FPS or msec of a phase on Arria10SoC with D435
+Via ssh -T of X11.  
 
-|BenchMark| FPS |Read Cam|Execution|Drawing|
-|      :-:|    -|       -|        -|      -|
-|test.py  |  6.5|       -|        -|      -|
+- D435 Realsense  
+
+|BenchMark  | FPS |Read Cam|Execution|Drawing|                       Notice |
+|      :-:  |    -|       -|        -|      -|                             -|
+|test.py    |    6|       -|        -|      -| RGB, 1 process 1 thread      |
+|test.py    |    2|       -|        -|      -| RGB-D, 1 process 1 thread    |
+
+- Versus UVC Camera estimation  
+
+|BenchMark  | FPS |Read Cam|Execution|Drawing|                       Notice |
+|      :-:  |    -|       -|        -|      -|                             -|
+|cam_demo.py|   26|       -|       55|    110| RGB, 2 process 2 threads     |
 
 **Jun.28, 2019**  
