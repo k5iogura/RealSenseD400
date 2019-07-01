@@ -196,7 +196,7 @@ Ok
 
 # D435 on Ubuntu 16.04 server with Altera Arria10soc  
 
-- Upgrade GCC version 5 to version 6 via [PPA](https://launchpad.net/~ubuntu-toolchain-r/+archive/ubuntu/test) (but maybe unnecessary).  
+- Upgrade GCC version 5 to version 6 via [PPA](https://launchpad.net/~ubuntu-toolchain-r/+archive/ubuntu/test) (but maybe unnecessary) reference :[installation of gcc-6 on ubuntu](https://gist.github.com/zuyu/7d5682a5c75282c596449758d21db5ed).  
 
 ```
  # uname -r
@@ -212,5 +212,21 @@ Ok
 ```
 
 **Continue from above "Break security holds" section**  
+
+### Benchmark test of FPS or msec of a phase on Arria10SoC with D435
+Via ssh -T of X11.  
+
+- D435 Realsense  
+
+|BenchMark  | FPS |Read Cam|Execution|Drawing|                       Notice |
+|      :-:  |    -|       -|        -|      -|                             -|
+|test.py    |    6|       -|        -|      -| RGB, 1 process 1 thread      |
+|test.py    |    2|       -|        -|      -| RGB-D, 1 process 1 thread    |
+
+- Versus UVC Camera estimation  
+
+|BenchMark  | FPS |Read Cam|Execution|Drawing|                       Notice |
+|      :-:  |    -|       -|        -|      -|                             -|
+|cam_demo.py|   26|       -|       55|    110| RGB, 2 process 2 threads     |
 
 **Jun.28, 2019**  
