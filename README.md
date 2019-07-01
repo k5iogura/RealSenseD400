@@ -144,6 +144,14 @@ Below make command includes **-j1** option to use 1process. It is slow but safet
  $ python  -c "import pyreadsense2"
 ```
 
+Attach udev rule for RealSense device.  
+
+```
+ # cp ../config/99-realsense-libusb.rules /etc/udev/rules.d/
+ # udevadm control --reload-rules
+ # udevadm trigger
+```
+
 ### Update firmware on Windows10
 Download Intel RealSense D400 Series DFU Tool for Windows.zip and D400_Series_Production_FW_5_11_1_100.zip  
 ![](./FirmwareUpdater.png)  
