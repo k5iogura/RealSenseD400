@@ -237,5 +237,6 @@ Via ssh -T of X11.
 |BenchMark  | FPS |Read Cam|Execution|Drawing|                       Notice      |
 |      :-:  |    -|       -|        -|      -|                                  -|
 |demo_d435  |    8|     100|      110|    110| RGB-D, 3 process 3 threads a53    |
+|demo_d435  |   23|      10|       50|     50| RGB-D, 3 process 3 threads a53    |
 
 **Jun.28, 2019**  
