@@ -232,4 +232,10 @@ Via ssh -T of X11.
 |cam_demo.py|   26|       -|       42|    110| RGB, dma, 2 process 2 threads     |
 |cam_demo.py|   12|       -|       42|    210| RGB, dma, 2 process 3 threads     |
 
+- Versus D435 Camera on Rock64 estimation  
+
+|BenchMark  | FPS |Read Cam|Execution|Drawing|                       Notice      |
+|      :-:  |    -|       -|        -|      -|                                  -|
+|demo_d435  |    8|     100|      110|    110| RGB-D, 3 process 3 threads a53    |
+
 **Jun.28, 2019**  
