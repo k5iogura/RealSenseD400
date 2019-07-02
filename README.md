@@ -217,6 +217,8 @@ Ok
 Via ssh -T of X11.  
 
 - D435 Realsense  
+D435 USB2.0(MicroB)  
+Arria10SoC(A9 dual)  
 
 |BenchMark  | FPS |Read Cam|Execution|Drawing|                       Notice      |
 |      :-:  |    -|       -|        -|      -|                                  -|
@@ -226,6 +228,8 @@ Via ssh -T of X11.
 |435_demo.py|    4|       -|       42|    360| RGB-D, dma, 2 process 2 thread    |
 
 - Versus UVC Camera estimation  
+D435 USB2.0(MicroB)  
+Arria10SoC(A9 dual)  
 
 |BenchMark  | FPS |Read Cam|Execution|Drawing|                       Notice      |
 |      :-:  |    -|       -|        -|      -|                                  -|
@@ -233,6 +237,9 @@ Via ssh -T of X11.
 |cam_demo.py|   12|       -|       42|    210| RGB, dma, 2 process 3 threads     |
 
 - Versus D435 Camera on Rock64 estimation  
+D435 USB2.0(Type-A)  
+EdgeTPU USB3.0(Type-A)  
+Rock64(A53 quad)  
 
 |BenchMark  | FPS |Read Cam|Execution|Drawing|                       Notice      |
 |      :-:  |    -|       -|        -|      -|                                  -|
