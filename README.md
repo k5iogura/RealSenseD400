@@ -253,4 +253,13 @@ EdgeTPU via USB3.0(Type-A)
 
 [demo_d435](https://github.com/k5iogura/EdgeTPU/tree/master/rock64/demo_d435_ssd_mobilenet.py)  
 
+- Intel PC(Celeron dual) with D435 Realsense  
+D435 via USB3.0(Type-A to Type-C)  
+
+|BenchMark  | FPS |Read Cam|Execution|Drawing|                       Notice      |
+|      :-:  |    -|       -|        -|      -|                                  -|
+|test.py    |   30|       -|        -|      -| RGB, 1 process 1 thread           |
+|test.py    |   30|       -|        -|      -| RGB-D, 1 process 1 thread         |
+[test.py](https://github.com/k5iogura/RealSenseD400/tree/master/python/test.py)  
+
 **July.03, 2019**  
