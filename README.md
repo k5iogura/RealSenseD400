@@ -145,6 +145,7 @@ Below make command includes **-j1** option to use 1process. It is slow but safet
 ```
 
 Attach udev rule for RealSense device.  
+**Make sure plugout D435**  
 
 ```
  # cp ../config/99-realsense-libusb.rules /etc/udev/rules.d/
@@ -157,6 +158,8 @@ Download Intel RealSense D400 Series DFU Tool for Windows.zip and D400_Series_Pr
 ![](./FirmwareUpdater.png)  
 
 ### Check realsense-viewer on RaspberryPi-3 Model B+
+**Plugin D435 to USB port**.  
+
 ```
  $ ls /dev/video*
    /dev/video0  /dev/video1  /dev/video2
