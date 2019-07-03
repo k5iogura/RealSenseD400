@@ -225,6 +225,7 @@ D435 via USB2.0(MicroB to Type-A to Type-C)
 |test.py    |    2|       -|        -|      -| RGB-D, 1 process 1 thread         |
 |435_demo.py|   37|       -|       42|    110| RGB, dma, 2 process 2 thread      |
 |435_demo.py|    4|       -|       42|    360| RGB-D, dma, 2 process 2 thread    |
+
 [test.py](https://github.com/k5iogura/RealSenseD400/tree/master/python/test.py)  
 [435_demo.py](https://github.com/k5iogura/devmem/tree/master/CLib/435_demo.py)  
 
@@ -235,6 +236,7 @@ D435 via USB2.0(MicroB to Type-A to Type-C)
 |      :-:  |    -|       -|        -|      -|                                  -|
 |cam_demo.py|   26|       -|       42|    110| RGB, dma, 2 process 2 threads     |
 |cam_demo.py|   12|       -|       42|    210| RGB, dma, 2 process 3 threads     |
+
 [cam_demo.py](https://github.com/k5iogura/devmem/tree/master/CLib/cam_demo.py)  
 
 - rock64(A53 quad) with D435 Realsense  
@@ -244,7 +246,8 @@ EdgeTPU via USB3.0(Type-A)
 |BenchMark  | FPS |Read Cam|Execution|Drawing|                       Notice      |
 |      :-:  |    -|       -|        -|      -|                                  -|
 |demo_d435  |    7|     100|      110|    110| RGB-D, 3 process 3 threads a53    |
-|demo_d435  |   23|      10|       50|     50| RGB, 3 process 3 threads a53    |
+|demo_d435  |   23|      10|       50|     50| RGB, 3 process 3 threads a53      |
+
 [demo_d435](https://github.com/k5iogura/EdgeTPU/tree/master/rock64/demo_d435_ssd_mobilenet.py)  
 
-**Jun.28, 2019**  
+**July.03, 2019**  
