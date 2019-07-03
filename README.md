@@ -213,7 +213,7 @@ Ok
 
 **Continue from above "Break security holds" section**  
 
-### Benchmark test of FPS or msec of a phase on Arria10SoC with D435
+# Benchmark test of FPS or msec on several types of ARM-Board with D435
 BenchMark means name of using python script.  
 
 - Arria10SoC(A9 dual) with D435 Realsense  
