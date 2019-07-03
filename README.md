@@ -221,24 +221,26 @@ BenchMark means name of using python script.
 
 - Arria10SoC(A9 dual) with D435 Realsense  
 D435 via USB2.0(MicroB to Type-A to Type-C)  
+yolo_352x288 Detection  
 
-|BenchMark  | FPS |Read Cam|Execution|Drawing|                       Notice      |
-|      :-:  |    -|       -|        -|      -|                                  -|
-|test.py    |    6|       -|        -|      -| RGB, 1 process 1 thread           |
-|test.py    |    2|       -|        -|      -| RGB-D, 1 process 1 thread         |
-|435_demo.py|   37|       -|       42|    110| RGB, dma, 2 process 2 thread      |
-|435_demo.py|    4|       -|       42|    360| RGB-D, dma, 2 process 2 thread    |
+|BenchMark  | FPS |Read Cam|Execution|Drawing|                       Notice            |
+|      :-:  |    -|       -|        -|      -|                                        -|
+|test.py    |    6|       -|        -|      -| No Detection, RGB, 1 process 1 thread   |
+|test.py    |    2|       -|        -|      -| No Detection, RGB-D, 1 process 1 thread |
+|435_demo.py|   37|       -|       42|    110| RGB, dma, 2 process 2 thread            |
+|435_demo.py|    4|       -|       42|    360| RGB-D, dma, 2 process 2 thread          |
 
 [test.py](https://github.com/k5iogura/RealSenseD400/tree/master/python/test.py)  
 [435_demo.py](https://github.com/k5iogura/devmem/tree/master/CLib/435_demo.py)  
 
 - Arria10SoC(A9 dual) with UVC Realsense  
 D435 via USB2.0(MicroB to Type-A to Type-C)  
+yolo_352x288 Detection  
 
-|BenchMark  | FPS |Read Cam|Execution|Drawing|                       Notice      |
-|      :-:  |    -|       -|        -|      -|                                  -|
-|cam_demo.py|   26|       -|       42|    110| RGB, dma, 2 process 2 threads     |
-|cam_demo.py|   12|       -|       42|    210| RGB, dma, 2 process 3 threads     |
+|BenchMark  | FPS |Read Cam|Execution|Drawing|                       Notice            |
+|      :-:  |    -|       -|        -|      -|                                        -|
+|cam_demo.py|   26|       -|       42|    110| RGB, dma, 2 process 2 threads           |
+|cam_demo.py|   12|       -|       42|    210| RGB, dma, 2 process 3 threads           |
 
 [cam_demo.py](https://github.com/k5iogura/devmem/tree/master/CLib/cam_demo.py)  
 
@@ -246,20 +248,20 @@ D435 via USB2.0(MicroB to Type-A to Type-C)
 D435 via USB2.0(Type-A to Type-C)  
 EdgeTPU via USB3.0(Type-A)  
 
-|BenchMark  | FPS |Read Cam|Execution|Drawing|                       Notice      |
-|      :-:  |    -|       -|        -|      -|                                  -|
-|demo_d435  |    7|     100|      110|    110| RGB-D, 3 process 3 threads a53    |
-|demo_d435  |   23|      10|       50|     50| RGB, 3 process 3 threads a53      |
+|BenchMark  | FPS |Read Cam|Execution|Drawing|                       Notice            |
+|      :-:  |    -|       -|        -|      -|                                        -|
+|demo_d435  |    7|     100|      110|    110| RGB-D, 3 process 3 threads a53          |
+|demo_d435  |   23|      10|       50|     50| RGB, 3 process 3 threads a53            |
 
 [demo_d435](https://github.com/k5iogura/EdgeTPU/tree/master/rock64/demo_d435_ssd_mobilenet.py)  
 
 - Intel PC(Celeron dual) with D435 Realsense  
 D435 via USB3.0(Type-A to Type-C)  
 
-|BenchMark  | FPS |Read Cam|Execution|Drawing|                       Notice      |
-|      :-:  |    -|       -|        -|      -|                                  -|
-|test.py    |   30|       -|        -|      -| RGB, 1 process 1 thread           |
-|test.py    |   30|       -|        -|      -| RGB-D, 1 process 1 thread         |
+|BenchMark  | FPS |Read Cam|Execution|Drawing|                       Notice            |
+|      :-:  |    -|       -|        -|      -|                                        -|
+|test.py    |   30|       -|        -|      -| No Detection, RGB, 1 process 1 thread   |
+|test.py    |   30|       -|        -|      -| No Detection, RGB-D, 1 process 1 thread |
 
 [test.py](https://github.com/k5iogura/RealSenseD400/tree/master/python/test.py)  
 
