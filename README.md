@@ -216,7 +216,7 @@ Ok
 
 **Continue from above "Break security holds" section**  
 
-# Benchmark test of FPS or msec on several types of ARM-Board and IntelPC with D435
+# Benchmark detection task estimation for FPS or msec on several types of ARM-Board and IntelPC with D435
 BenchMark means name of using python script.  
 
 - Arria10SoC(A9 dual) with D435 Realsense  
@@ -262,7 +262,11 @@ D435 via USB3.0(Type-A to Type-C)
 |      :-:  |    -|       -|        -|      -|                                        -|
 |test.py    |   30|       -|        -|      -| No Detection, RGB, 1 process 1 thread   |
 |test.py    |   30|       -|        -|      -| No Detection, RGB-D, 1 process 1 thread |
+|test.py    |   30|       -|        -|      -| No Detection, Depth, 1 process 1 thread |
+|demo_d435  |   21|       -|        -|      -| RGB, 1 process 1 thread                 |
+|demo_d435  |   15|       -|        -|      -| RGB-D, 1 process 1 thread               |
 
 [test.py](https://github.com/k5iogura/RealSenseD400/tree/master/python/test.py)  
+[demo_d435](https://github.com/k5iogura/vinosyp/tree/master/ie/SSD_Mobilenet/demo_d435_ssd_mobilenet.py)  
 
 **July.03, 2019**  
